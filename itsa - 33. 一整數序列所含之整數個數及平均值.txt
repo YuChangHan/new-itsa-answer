@@ -1,0 +1,22 @@
+#include<iostream>         
+#include <string>        
+#include <sstream>        
+#include <iomanip>        
+using namespace std;        
+int main() {        
+    string input;        
+    int temp,  a = 0;        
+    double sum = 0;        
+    while(getline(cin, input)){        
+    stringstream in(input);        
+    while (in >> temp) {        
+        sum += temp;        
+        a++;        
+    }        
+    cout << "Size: " << a << endl;        
+    cout <<fixed<<setprecision(3)<< "Average: " << sum / a << endl;        
+a=0;    
+sum=0;    
+}      
+    return 0;        
+}  

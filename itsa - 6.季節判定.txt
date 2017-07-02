@@ -1,0 +1,45 @@
+#include<iostream>        
+#include<iomanip>        
+using namespace std;  
+  
+int main()  
+{  
+    int m = 0;  
+    cin >> m;  
+    /*if (mounth >= 3 && mounth <= 5) 
+        cout << "Spring"; 
+    else if(mounth >= 6 && mounth <= 8) 
+        cout << "Summer"; 
+    else if (mounth >= 9 && mounth <= 11) 
+        cout << "Autumn"; 
+    else 
+        cout << "Winter"; 
+        */  
+    switch (m)  
+    {  
+    case 1:  
+    case 2:  
+    case 12:  
+        cout << "Winter" << endl;  
+        break;  
+    case 3:  
+    case 4:  
+    case 5:  
+        cout << "Spring" << endl;  
+        break;  
+    case 6:  
+    case 7:  
+    case 8:  
+        cout << "Summer" << endl;  
+        break;  
+    case 9:  
+    case 10:  
+    case 11:  
+        cout << "Autumn" << endl;  
+        break;  
+    default:  
+        break;  
+    }  
+        system("pause");  
+    return 1;  
+}  

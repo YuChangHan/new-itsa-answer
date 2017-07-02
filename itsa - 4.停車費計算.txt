@@ -1,0 +1,28 @@
+#include<iostream>        
+#include<iomanip>        
+using namespace std;  
+  
+int main()  
+{  
+    int hour, min, price, a[2], b[2];  
+    cin >> a[0] >> a[1] >> b[0] >> b[1];  
+  
+    hour = b[0] - a[0];//>= 0 ? b[0] - a[0] >= 0 : abs(b[0] - a[0]);  
+    min = b[1] - a[1];// >= 0 ? b[1] - a[1] >= 0 : abs(b[1] - a[1]);  
+    min =  min + (hour * 60);  
+    //cout << min << endl << endl;  
+    //全部轉成分鐘  
+    if (min < 30)//30分鐘以內免費  
+        price = 0;  
+    else if (min < 120)//兩小時內每30分鐘30元,未滿30分鐘不用錢  
+        price = 30 * (min / 30);//0k  
+    else if (min < 240)//累進式，未滿四小時每30分鐘40元 所以要加上120元  
+        price = ((min - 120) / 30) * 40 +60;  
+    else if (min > 240)  
+        price = ((min - 240) / 30) * 60 + 120 + 160;//60+80  
+    cout << price << endl;  
+        system("pause");  
+    return 0;  
+}  
+ 
+ 

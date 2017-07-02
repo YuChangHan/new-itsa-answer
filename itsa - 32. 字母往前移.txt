@@ -1,0 +1,42 @@
+#include <iostream>       
+#include <string>       
+using namespace std;       
+       
+int main()       
+{       
+    string input;       
+    int num;       
+    getline(cin,input);       
+    cin>>num;       
+    int len=input.size();       
+    if(len<101)       
+    {       
+        for(int i=0;i<len;i++)       
+        {       
+            int trash=input[i];       
+            if(trash>='a' && trash<='z')       
+            {       
+                trash+=num;       
+                if(trash>122)       
+                    trash-=26;       
+            }       
+            else if(trash>='A' && trash<='Z')       
+            {       
+                trash+=num;       
+                if(trash>90)       
+                    trash-=26;       
+            }       
+            else if(trash>='0' && trash<='9')       
+            {       
+                trash+=num;       
+                if(trash>57)       
+                    trash-=10;       
+            }       
+            input[i]=trash;       
+            cout<<input[i];       
+        }       
+        cout<<endl;       
+       
+    }       
+    return 0;       
+}  

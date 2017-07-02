@@ -1,0 +1,28 @@
+#include<iostream>        
+#include<iomanip>        
+using namespace std;  
+  
+int main()  
+{  
+    char O='1';  
+    int a, b, c, d, T;  
+    cin >> T;  
+    for (int i = 0; i < T; i++)  
+    {  
+        cin >>O >>a >> b >> c >> d;  
+        if (O == '+')  
+        {  
+            cout << a + c << " " << b + d << endl;  
+        }  
+        else if (O == '-')  
+        {  
+            cout << a - c << " " << b - d << endl;  
+        }  
+        else if (O == '*')  
+        {  
+            cout << (a * c) - (d * b) << " " << (c* b) + (d*a) << endl;  
+        }  
+    }  
+        system("pause");  
+    return 1 ;  
+}  

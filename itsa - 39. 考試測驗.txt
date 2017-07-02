@@ -1,0 +1,27 @@
+#include <iostream>  
+using namespace std;  
+int main()  
+{  
+int n, i = 0;  
+for(cin >> n; i < n; ++i)  
+{  
+int a, b, c, sum;  
+cin >> a >> b >> c;  
+sum = a + b + c;  
+bool ea = a > 59,  
+eb = b > 59,  
+ec = c > 59,  
+la = a < 60,  
+lb = b < 60,  
+lc = c < 60,  
+esum = sum > 219,  
+lsum = sum < 220;  
+if((ea && eb && ec) || ((la || lb || lc) && esum))  
+cout << 'P' << endl;  
+else if((la && eb && ec) || (ea && lb && ec) || (ea && eb && lc) || a > 79 || b > 79 || c > 79)  
+cout << 'M' << endl;  
+else cout << 'F' << endl;  
+  
+}  
+return 0;  
+}  

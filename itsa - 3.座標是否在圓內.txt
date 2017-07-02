@@ -1,0 +1,14 @@
+#include<iostream>      
+using namespace std;      
+      
+int main()      
+{      
+    long int x=1, y;      
+   
+        cin >> x >> y;      
+        cout << (x*x + y*y <= 40000 ? "inside" : "outside") << endl;      
+          
+    system("pause");      
+      
+    return 1;      
+}  

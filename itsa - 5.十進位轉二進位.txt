@@ -1,0 +1,12 @@
+#include <iostream>  
+#include <bitset>  
+  
+using namespace std;  
+  
+int main() {  
+    int B = 0;  
+    cin >> B;  
+    bitset<sizeof(B) * 2> s(B);  
+    cout << s << endl;  
+    return 1;  
+}  

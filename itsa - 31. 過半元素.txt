@@ -1,0 +1,38 @@
+#include<iostream>      
+#include<string>      
+#include<sstream>      
+#include<vector>      
+using namespace std;      
+int main() {      
+    string input;      
+    while (getline(cin, input)) {      
+        vector <string> arr;      
+        istringstream delim(input);      
+        string token;      
+        while (getline(delim, token, ' ')) {      
+            arr.push_back(token);      
+        }      
+        int l = arr.size();      
+        int c = l / 2;      
+        int i = 0;      
+        for (i=0; i < l; i++)      
+        {         
+            int count = 0;      
+            for (int j = 0; j < l; j++)      
+            {      
+                if (arr[i] == arr[j]) {      
+                    count++;      
+                }      
+            }      
+                if (c < count) {      
+                    cout << arr[i] << endl;      
+                    break;      
+                }      
+      
+                  
+        }      
+        if (i == l)      
+            cout << "NO" << endl;      
+    }      
+    return 0;      
+}  

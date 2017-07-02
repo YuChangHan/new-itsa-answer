@@ -1,0 +1,22 @@
+#include<iostream>               
+#include<string>     
+using namespace std;  
+void A(int p, int  t)  
+{  
+    t -= p;  
+    cout << t - (((t / 50) * 50) + ((t - (t / 50) * 50) / 5) * 5) << "," <<  
+        (t - (t / 50) * 50) / 5 << "," << t / 50 << endl;  
+}  
+int main()  
+{  
+    int total, a, b, c, price; char G;  
+    cin >> total >>G >> a >> G >> b >> G >> c;  
+    a *= 15; b *= 20; c *= 30;  
+    price = a + b + c;  
+    if (price >= total)  
+        cout << 0<<endl;  
+    else  
+        A(price, total);  
+  
+    return 0;  
+}  

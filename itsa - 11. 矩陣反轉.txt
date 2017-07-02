@@ -1,0 +1,28 @@
+#include <iostream>   
+#include <string>   
+#include <iomanip>   
+#include <math.h>   
+using namespace std;   
+int main()   
+{   
+int iRow;   
+int iColumn;   
+int iarr[10000];   
+int i, j;   
+while (cin >> iRow >> iColumn)   
+{   
+for (i = 0; i < iRow*iColumn; i++)   
+cin >> iarr[i];   
+for (i = 0; i < iColumn; i++)   
+{   
+for (j = 0; j < iRow; j++)   
+{   
+if (j == iRow - 1)   
+cout << iarr[i + j*iColumn];   
+else   
+cout << iarr[i + j*iColumn] << " ";   
+}   
+cout << endl;   
+}   
+}   
+}  

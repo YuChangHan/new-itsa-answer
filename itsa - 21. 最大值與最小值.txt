@@ -1,0 +1,24 @@
+#include<iostream>              
+#include<iomanip>  
+using namespace std;  
+int main()  
+{  
+    float A[10],maximum, minimum;  
+    for (int i = 0; i < 10; i++)  
+        cin >> A[i];  
+    maximum = A[0];  
+    minimum = A[0];  
+    for (int i = 0; i < 10; i++)  
+    {  
+        if (A[i] >= maximum)  
+            maximum = A[i];  
+    }  
+    for (int i = 0; i < 10; i++)  
+    {  
+        if (A[i] <= minimum)  
+            minimum = A[i];  
+    }  
+    cout << "maximum:" << fixed << setprecision(2) <<maximum << endl  
+         << "minimum:" <<  fixed << setprecision(2)<<minimum << endl;  
+    return 0;  
+}  

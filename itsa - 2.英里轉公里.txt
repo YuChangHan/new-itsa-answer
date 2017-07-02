@@ -1,0 +1,11 @@
+#include<iostream>        
+#include<iomanip>        
+using namespace std;  
+int main()  
+{  
+    int  y;  
+    cin >> y;  
+    cout <<fixed<<setprecision(1) << y*1.6 << endl;  
+    system("pause");  
+    return 0;  
+}  

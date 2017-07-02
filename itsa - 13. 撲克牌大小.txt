@@ -1,0 +1,94 @@
+
+#include<iostream>    
+#include<string>    
+using namespace std;    
+int main()    
+{    
+    char poker[]={'C','D','H','S'};    
+    int pokercount[52]={0};    
+    int input=0;    
+        
+    cin>>input;    
+    cin.get();    
+    input++;    
+        
+    char **A;    
+    A=new char*[input];    
+        
+    int i=0,j=0,k=0,l=0;    
+        
+    for(i=0;i<input;i++)    
+    A[i]=new char[1000];    
+        
+       
+    for(i=1;i<input;i++)    
+    {       
+      cin.getline(A[0],1000);    
+      int number=strlen(A[0]);    
+      for(j=0;j<number;j++)    
+      {    
+          for(k=3;k>=0;k--)    
+          {    
+           if(A[0][j]==poker[k])    
+            {      
+              if(A[0][j+2]=='1'||A[0][j+2]=='2'||A[0][j+2]=='3'||A[0][j+2]=='0')    
+              {    
+              pokercount[k*13+(A[0][j+2]-48)+9]+=1;    
+              j+=3;    
+              }    
+              else    
+              {    
+              pokercount[k*13+(A[0][j+1]-48)-1]+=1;    
+              j+=2;    
+              }    
+            }    
+          }                          
+      }    
+      for(j=51;j>=0;j--)    
+      {    
+         while(pokercount[j]!=0)    
+         {    
+         int output=(j-(j/13)*13)+1;    
+    
+           A[i][l]=poker[j/13];    
+           if(output>=10)    
+           {    
+              output+=38;    
+              A[i][l+1]='1';    
+              A[i][l+2]=output;    
+              l+=3;    
+           }    
+           else    
+           {    
+           A[i][l+1]=output+48;    
+           l+=2;    
+           }    
+           A[i][l]=' ';    
+           l++;    
+               
+           pokercount[j]--;    
+         }    
+      }    
+      A[i][l-1]='\0';     
+      for(j=0;j<number;j++)    
+      {    
+      A[0][j]=' ';    
+      }    
+      l=0;    
+    }    
+        
+    //output    
+    for(i=1;i<input;i++)    
+    {    
+     for(j=0;j<strlen(A[i]);j++)       
+      { cout<<A[i][j]; }    
+       cout<<endl;    
+    }    
+        
+    for(i=0;i<input;i++)    
+    delete []A[i];    
+    delete []A;    
+        
+    
+   return 1;    
+}  
